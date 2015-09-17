@@ -14,16 +14,22 @@ func main() {
 	}
 	switch args[0] {
 	case "update":
-		go func(p string) {
-			fmt.Printf("update packages %s\n", p)
-		}(args[1])
+		go update(args[1])
 	case "check":
-		go func(p string) {
-			fmt.Printf("Check update %s\n", p)
-		}(args[1])
+		go check(args[1])
 	default:
 		fmt.Println("You must put some command")
 	}
 	fmt.Println(args)
 	fmt.Println("Hello world")
+}
+
+func update(p string) {
+	fmt.Printf("update packages %s\n", p)
+
+}
+
+func check(p string) {
+	fmt.Printf("Check update %s\n", p)
+
 }
